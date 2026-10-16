@@ -13,15 +13,13 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class AlexParametrizedTest {
     @Mock
-    Kittens kittens;
+    Feline feline;
 
-    @Mock
-    Food food;
 
     @ParameterizedTest(name = "Друг {0} должен быть в списке друзей Алекса") //Тест написан с помощью ИИ, чтобы он был параметризован
     @ValueSource(strings = {"Марти", "Глория", "Мелман"})
     void getFriendsReturnsCorrectName(String friendName) throws Exception {
-        Alex alex = new Alex("Самец", kittens, food);
+        Alex alex = new Alex("Самец", feline);
         List<String> friends = alex.getFriends();
         assertTrue(friends.contains(friendName), "Друг '" + friendName + "' должен быть в списке друзей");
     }

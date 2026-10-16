@@ -15,7 +15,7 @@ public class FelineTest {
     }
     @Test
     void getFoodReturnsPredatorFood() throws Exception {
-        List<String> food = feline.getFood();
+        List<String> food = feline.getFood("Хищник");
         assertEquals(List.of("Животные", "Птицы", "Рыба"), food,
                 "getFood должен возвращать еду хищника (через eatMeat)");
     }
